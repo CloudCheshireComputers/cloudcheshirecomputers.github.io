@@ -34,11 +34,12 @@
         text-shadow: 0 0 20px #00eaff, 0 0 40px #00bcd4;
         animation: pulse 4s ease-in-out infinite;
         letter-spacing: 6px;
+        margin: 0;
     }
 
     p {
         font-size: 1.2rem;
-        margin-top: 15px;
+        margin: 15px 0 0 0;
         opacity: 0.85;
         letter-spacing: 4px;
         text-shadow: 0 0 10px #00eaff;
@@ -110,6 +111,28 @@
         margin: 0 8px;
     }
     .contact-link:hover { text-decoration: underline; }
+
+    /* === Terms & Conditions (small, centered) === */
+    .terms {
+        max-width: 900px;
+        margin: 22px auto 0 auto;
+        padding: 0 20px;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; /* more readable for long text */
+        font-size: 0.8rem;          /* small text */
+        line-height: 1.45;
+        color: #cde7eb;
+        opacity: 0.9;
+        text-shadow: 0 0 6px rgba(0, 234, 255, 0.45);
+    }
+    .terms b {
+        color: #eafcff;
+    }
+
+    @media (max-width: 640px) {
+        h1 { font-size: 2.8rem; letter-spacing: 4px; }
+        p { font-size: 1rem; letter-spacing: 2px; }
+        .terms { font-size: 0.78rem; }
+    }
 </style>
 </head>
 <body>
@@ -156,6 +179,12 @@ for (let i = 0; i < 40; i++) {
             </g>
         </svg>
     </a>
+</div>
+
+<!-- Terms & Conditions (small, centered) -->
+<div class="terms" role="contentinfo" aria-label="Terms and Conditions">
+  <b>Terms &amp; Conditions:</b>
+  All content on this website, including text, images, graphics, branding, and other materials, is the exclusive property of the site owner. No part may be copied, reproduced, distributed, or used for any purpose without prior written permission. Content is provided “as‑is” without guarantees, and the owner accepts no liability for any loss, damage, or issues arising from use of this site. By accessing this website, you agree not to misuse the site or attempt to breach security. These terms may be updated at any time, and continued use constitutes acceptance of any changes.
 </div>
 
 </body>
