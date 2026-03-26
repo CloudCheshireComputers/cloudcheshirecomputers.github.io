@@ -14,13 +14,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
-  <!-- AUTO-UPDATING EBAY STORE FEED WIDGET -->
-<div id="ebay-feed" style="display:flex; flex-wrap:wrap; gap:20px; padding:20px; background:#111; border-radius:12px;"></div>
+ <!-- AUTO-UPDATING EBAY STORE FEED WIDGET -->
+<h2 style="color:white; font-family:Arial; margin-top:30px;">Live eBay Listings</h2>
+
+<div id="ebay-feed" style="
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+    background:#111;
+    border-radius:12px;
+"></div>
 
 <script>
 // ====== CONFIG ======
-const EBAY_SELLER = "CloudCheshireComputers";  // <-- YOUR SELLER NAME
-const FEED_URL = `https://www.ebay.co.uk/sch/${EBAY_SSELLER}/m.html?_rss=1`;
+const EBAY_SELLER = "cloudcheshirecomputers2025";  
+const FEED_URL = `https://www.ebay.co.uk/sch/${EBAY_SELLER}/m.html?_rss=1`;
 const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}`;
 
 // ====== FETCH + RENDER ======
@@ -47,25 +56,25 @@ fetch(API_URL)
       card.style.boxShadow = "0 0 10px rgba(0,0,0,0.5)";
 
       card.innerHTML = `
-        <img src="${item.thumbnail}" style="width:100%; border-radius:6px;" />
+        <img src="${item.thumbnail}" style="width:100%; border-radius:8px;">
         <h3 style="font-size:16px; margin-top:10px;">${item.title}</h3>
         <a href="${item.link}" target="_blank" style="
-            display:inline-block;
-            margin-top:8px;
-            padding:8px 12px;
-            background:#0af;
-            color:#000;
-            border-radius:6px;
-            text-decoration:none;
-            font-weight:bold;">
-            View on eBay
-        </a>
+          display:inline-block;
+          margin-top:10px;
+          padding:8px 12px;
+          background:#0af;
+          color:black;
+          font-weight:bold;
+          border-radius:6px;
+          text-decoration:none;
+        ">View on eBay</a>
       `;
 
       container.appendChild(card);
     });
   });
 </script>
+  
   margin: 0;
   background: #000;
   color: #e0faff;
