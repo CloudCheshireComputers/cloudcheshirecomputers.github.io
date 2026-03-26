@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Cheshire – Store</title>
+
+    <!-- Orbitron Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #000;
+            color: #00eaff;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-top: 40px;
+            text-shadow: 0 0 20px #00eaff;
+        }
+
+        .store-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 30px;
+        }
+
+        .item {
+            width: 300px;
+            padding: 15px;
+            background: rgba(0, 50, 70, 0.15);
+            border: 1px solid #00eaff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00eaff60;
+            transition: 0.3s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00eaff;
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .item h2 {
+            font-size: 20px;
+            color: #00eaff;
+        }
+
+        .item a {
+            color: #00eaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .item a:hover {
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Cloud Cheshire Store</h1>
+    <p>Live eBay listings</p>
+
+    <div class="store-container" id="items"></div>
+
+    <footer>
+        © Cloud Cheshire. All rights reserved.
+    </footer>
+
+    <script>
+        const rssUrl = "https://www.ebay.co.uk/sch/cloudcheshirecomputers2025/m.html?_rss=1";
+
+        fetch("https://api.allorigins.win/get?url=" + encodeURIComponent(rssUrl))
+            .then(response => response.json())
+            .then(data => {
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(data.contents, "text/xml");
+                const items = xml.querySelectorAll("item");
+
+                const container = document.getElementById("items");
+
+                items.forEach(item => {
+                    const title = item.querySelector("title").textContent;
+                    const link = item.querySelector("link").textContent;
+                    const image = "https://via.placeholder.com/300x200?text=Cloud+Cheshire";
+
+                    const card = document.createElement("div");
+                    card.className = "item";
+
+                    card.innerHTML = `
+                        <img src="${image}" alt="Item Image">
+                        <h2>${title}</h2>
+                        <a href="${link}" target="_blank">View on eBay</a>
+                    `;
+
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error("RSS Load Error:", err);
+                document.getElementById("items").innerHTML =
+                    "<p>Unable to load eBay listings right now.</p>";
+            });
+    </script>
+
+</body>
+</html>
