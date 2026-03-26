@@ -103,27 +103,43 @@
         filter: drop-shadow(0 0 15px #00eaff);
     }
 
-    /* optional: style text links next to icons */
-    .contact-link {
-        color: #e0faff;
+    /* Store Button */
+    .store-btn {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 32px;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        color: #00eaff;
         text-decoration: none;
-        letter-spacing: 1px;
-        margin: 0 8px;
+        border: 2px solid #00eaff;
+        border-radius: 8px;
+        font-family: 'Orbitron', sans-serif;
+        box-shadow: 0 0 15px #00eaff88, 0 0 30px #00eaff55;
+        text-shadow: 0 0 10px #00eaff;
+        transition: 0.3s ease-in-out;
     }
-    .contact-link:hover { text-decoration: underline; }
 
-    /* === Terms & Conditions (small, centered) === */
+    .store-btn:hover {
+        color: #000;
+        background: #00eaff;
+        box-shadow: 0 0 25px #00eaff, 0 0 40px #00c3ff, 0 0 70px #00eaff;
+        transform: scale(1.08);
+    }
+
+    /* Terms */
     .terms {
         max-width: 900px;
         margin: 22px auto 0 auto;
         padding: 0 20px;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; /* more readable for long text */
-        font-size: 0.8rem;          /* small text */
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        font-size: 0.8rem;
         line-height: 1.45;
         color: #cde7eb;
         opacity: 0.9;
         text-shadow: 0 0 6px rgba(0, 234, 255, 0.45);
     }
+
     .terms b {
         color: #eafcff;
     }
@@ -136,6 +152,7 @@
 </style>
 </head>
 <body>
+
 <div class="scanline"></div>
 
 <script>
@@ -152,12 +169,10 @@ for (let i = 0; i < 40; i++) {
 <h1>CLOUD CHESHIRE</h1>
 <p>Et in pulverem reverteris</p>
 
-<div class="icon-row">
-    <!-- Email -->
-    <a href="mailto:jason@cloudcheshire.co.uk" class="contact-link" aria-label="Email Jason at Cloud Cheshire">
-        <svg class="mail-icon" viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
-            <rect x="4" y="12" width="56" height="40" rx="6" stroke="#00eaff" stroke-width="3"/>
-            <path d="M8 16L32 34L56 16" stroke="#00eaff" stroke-width="3" />
+<!-- ✅ NEW GLOWING STORE BUTTON -->
+<a href="/store.html" class="store-btn">STORE</a>
+
+<div class="icon-row6" stroke="#00eaff" stroke-width="3" />
             <path d="M8 44L24 30" stroke="#00eaff" stroke-width="3" opacity="0.7"/>
             <path d="M56 44L40 30" stroke="#00eaff" stroke-width="3" opacity="0.7"/>
             <circle cx="32" cy="34" r="2" fill="#00eaff"/>
@@ -165,8 +180,8 @@ for (let i = 0; i < 40; i++) {
     </a>
 
     <!-- Phone -->
-    <a href="tel:+447798905131" class="contact-link" aria-label="Call Cloud Cheshire">
-        <svg class="phone-icon" viewBox="0 0 64 64" fill="none" role="img" aria-hidden="true">
+    tel:+447798905131
+        <svg class="phone-icon" viewBox="0 0 64 64" fill="none">
             <defs>
                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                     <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#00eaff" flood-opacity="0.9" />
@@ -181,10 +196,13 @@ for (let i = 0; i < 40; i++) {
     </a>
 </div>
 
-<!-- Terms & Conditions (small, centered) -->
-<div class="terms" role="contentinfo" aria-label="Terms and Conditions">
-  <b>Terms &amp; Conditions:</b>
-  All content on this website, including text, images, graphics, branding, and other materials, is the exclusive property of the site owner. No part may be copied, reproduced, distributed, or used for any purpose without prior written permission. Content is provided “as‑is” without guarantees, and the owner accepts no liability for any loss, damage, or issues arising from use of this site. By accessing this website, you agree not to misuse the site or attempt to breach security. These terms may be updated at any time, and continued use constitutes acceptance of any changes.
+<div class="terms">
+  <b>Terms & Conditions:</b>
+  All content on this website, including text, images, graphics, branding, and other materials, is the exclusive property of the site owner. 
+  No part may be copied, reproduced, distributed, or used for any purpose without prior written permission. Content is provided “as‑is” 
+  without guarantees, and the owner accepts no liability for any loss, damage, or issues arising from use of this site. By accessing this 
+  website, you agree not to misuse the site or attempt to breach security. These terms may be updated at any time, and continued use 
+  constitutes acceptance of any changes.
 </div>
 
 </body>
