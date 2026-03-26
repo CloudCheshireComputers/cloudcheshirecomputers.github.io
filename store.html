@@ -1,126 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Cheshire – Store</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Store – Cloud Cheshire</title>
 
-    <!-- Orbitron Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
-    <style>
-        body {
-            background: #000;
-            color: #00eaff;
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-        h1 {
-            font-size: 48px;
-            margin-top: 40px;
-            text-shadow: 0 0 20px #00eaff;
-        }
+body {
+  margin: 0;
+  background: #000;
+  color: #e0faff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
 
-        .store-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 40px;
-            gap: 30px;
-        }
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #00eaff, 0 0 40px #00bcd4;
+  letter-spacing: 4px;
+}
 
-        .item {
-            width: 300px;
-            padding: 15px;
-            background: rgba(0, 50, 70, 0.15);
-            border: 1px solid #00eaff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #00eaff60;
-            transition: 0.3s;
-        }
+p.subtext {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00eaff;
+  margin-bottom: 40px;
+}
 
-        .item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #00eaff;
-        }
+.store-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
 
-        .item img {
-            width: 100%;
-            border-radius: 10px;
-        }
+.item {
+  width: 300px;
+  padding: 15px;
+  background: rgba(0, 40, 50, 0.25);
+  border: 1px solid #00eaff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00eaff55;
+  transition: 0.3s;
+}
 
-        .item h2 {
-            font-size: 20px;
-            color: #00eaff;
-        }
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00eaff;
+}
 
-        .item a {
-            color: #00eaff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-        .item a:hover {
-            text-shadow: 0 0 10px #00eaff;
-        }
+.item h2 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  text-shadow: 0 0 8px #00eaff;
+}
 
-        footer {
-            margin-top: 50px;
-            font-size: 12px;
-            opacity: 0.5;
-        }
-    </style>
+.item a {
+  color: #00eaff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 6px #00eaff;
+}
+
+.glow-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 14px 32px;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  color: #00eaff;
+  text-decoration: none;
+  border: 2px solid #00eaff;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 15px #00eaff88, 0 0 30px #00eaff55;
+  text-shadow: 0 0 10px #00eaff;
+  transition: 0.3s ease-in-out;
+}
+
+.glow-btn:hover {
+  color: #000;
+  background: #00eaff;
+  box-shadow: 0 0 25px #00eaff, 0 0 40px #00c3ff;
+  transform: scale(1.08);
+}
+</style>
 </head>
-
 <body>
 
-    <h1>Cloud Cheshire Store</h1>
-    <p>Live eBay listings</p>
+<h1>STORE</h1>
+<p class="subtext">Live listings from Cloud Cheshire Computers</p>
 
-    <div class="store-container" id="items"></div>
+<div class="store-container" id="items"></div>
 
-    <footer>
-        © Cloud Cheshire. All rights reserved.
-    </footer>
+<a href="/index.html" class="glow-btn">BACK</a>
 
-    <script>
-        const rssUrl = "https://www.ebay.co.uk/sch/cloudcheshirecomputers2025/m.html?_rss=1";
+<script>
+const rssUrl = "https://www.ebay.co.uk/sch/cloudcheshirecomputers2025/m.html?_rss=1";
 
-        fetch("https://api.allorigins.win/get?url=" + encodeURIComponent(rssUrl))
-            .then(response => response.json())
-            .then(data => {
-                const parser = new DOMParser();
-                const xml = parser.parseFromString(data.contents, "text/xml");
-                const items = xml.querySelectorAll("item");
+fetch("https://api.allorigins.win/get?url=" + encodeURIComponent(rssUrl))
+  .then(response => response.json())
+  .then(data => {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, "text/xml");
+    const items = xml.querySelectorAll("item");
+    const container = document.getElementById("items");
 
-                const container = document.getElementById("items");
+    items.forEach(item => {
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+      const image = "https://via.placeholder.com/300x200?text=Cloud+Cheshire";
 
-                items.forEach(item => {
-                    const title = item.querySelector("title").textContent;
-                    const link = item.querySelector("link").textContent;
-                    const image = "https://via.placeholder.com/300x200?text=Cloud+Cheshire";
+      const card = document.createElement("div");
+      card.className = "item";
 
-                    const card = document.createElement("div");
-                    card.className = "item";
+      card.innerHTML = `
+        <img src="${image}" alt="Listing Image">
+        <h2>${title}</h2>
+        <a href="${link}" target="_blank">VIEW ON EBAY</a>
+      `;
 
-                    card.innerHTML = `
-                        <img src="${image}" alt="Item Image">
-                        <h2>${title}</h2>
-                        <a href="${link}" target="_blank">View on eBay</a>
-                    `;
-
-                    container.appendChild(card);
-                });
-            })
-            .catch(err => {
-                console.error("RSS Load Error:", err);
-                document.getElementById("items").innerHTML =
-                    "<p>Unable to load eBay listings right now.</p>";
-            });
-    </script>
+      container.appendChild(card);
+    });
+  })
+  .catch(err => {
+    document.getElementById("items").innerHTML = "<p>Unable to load listings right now.</p>";
+  });
+</script>
 
 </body>
 </html>
