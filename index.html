@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cloud Cheshire Computers</title>
 
-<!-- Favicons -->
 <link rel="icon" type="image/png" href="/favicon-96x96.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -14,7 +13,6 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-/* PAGE BASE */
 body {
   margin: 0;
   background: #000;
@@ -29,7 +27,6 @@ body {
   overflow: hidden;
 }
 
-/* LOGO */
 .logo-alien {
   width: 180px;
   margin-bottom: 25px;
@@ -43,7 +40,6 @@ body {
   100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
-/* HEADER */
 h1 {
   font-size: 4rem;
   text-shadow: 0 0 20px #00eaff, 0 0 40px #00bcd4;
@@ -51,6 +47,7 @@ h1 {
   letter-spacing: 6px;
   margin: 0;
 }
+
 p {
   font-size: 1.2rem;
   margin-top: 15px;
@@ -59,14 +56,12 @@ p {
   text-shadow: 0 0 10px #00eaff;
 }
 
-/* PULSE ANIMATION */
 @keyframes pulse {
   0% { text-shadow: 0 0 12px #00eaff; opacity: 0.9; }
   50% { text-shadow: 0 0 40px #00eaff; opacity: 1; }
   100% { text-shadow: 0 0 12px #00eaff; opacity: 0.9; }
 }
 
-/* SCANLINE */
 .scanline {
   position: absolute;
   top: 0;
@@ -76,12 +71,12 @@ p {
   background: rgba(0,255,255,0.15);
   animation: scan 7s linear infinite;
 }
+
 @keyframes scan {
   0% { top: 0; }
   100% { top: 100%; }
 }
 
-/* PARTICLE EFFECT */
 .particle {
   position: absolute;
   width: 2px;
@@ -91,18 +86,19 @@ p {
   border-radius: 50%;
   animation: drift 10s linear infinite;
 }
+
 @keyframes drift {
   from { transform: translateY(0); opacity: 0.6; }
   to { transform: translateY(-200vh); opacity: 0; }
 }
 
-/* BUTTONS */
 .button-row {
   display: flex;
   gap: 20px;
   margin-top: 35px;
   justify-content: center;
 }
+
 .glow-btn {
   padding: 14px 32px;
   font-size: 1.2rem;
@@ -116,6 +112,7 @@ p {
   text-shadow: 0 0 10px #00eaff;
   transition: 0.3s ease-in-out;
 }
+
 .glow-btn:hover {
   color: #000;
   background: #00eaff;
@@ -123,7 +120,6 @@ p {
   transform: scale(1.08);
 }
 
-/* TERMS */
 .terms {
   max-width: 900px;
   margin-top: 22px;
@@ -132,14 +128,12 @@ p {
   color: #cde7eb;
   text-shadow: 0 0 6px rgba(0,234,255,0.45);
 }
-
 </style>
 </head>
 <body>
 
 <div class="scanline"></div>
 
-<!-- PARTICLES -->
 <script>
 for (let i = 0; i < 40; i++) {
   let p = document.createElement('div');
@@ -151,13 +145,12 @@ for (let i = 0; i < 40; i++) {
 }
 </script>
 
-<!-- ✅ALIEN LOGO INSERTED HERE -->
-<img src="/images/alien-logo.png" alt="Cloud Cheshire Alien Logo" class="logo-alien">
+<!-- Alien Logo -->
+<img src="/images/alien-logo.png" class="logo-alien" alt="Alien Logo" />
 
 <h1>CLOUD CHESHIRE</h1>
 <p>Cheshire’s Trusted Computer Specialist</p>
 
-<!-- BUTTONS -->
 <div class="button-row">
   <a href="/support.html" class="glow-btn">SUPPORT</a>
   <a href="/store.html" class="glow-btn">STORE</a>
