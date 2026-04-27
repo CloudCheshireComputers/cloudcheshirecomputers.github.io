@@ -1,112 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Support – Cloud Cheshire</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support – Cloud Cheshire</title>
 
-<!-- Favicons / PWA -->
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+    <!-- Favicons / PWA -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    body {
-        margin: 0;
-        background: #000;
-        color: #e0faff;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 20px;
-        font-family: 'Orbitron', sans-serif;
-        text-align: center;
-    }
+        body {
+            margin: 0;
+            background: #000;
+            color: #e0faff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
 
-    h1 {
-        font-size: 3.2rem;
-        margin-bottom: 10px;
-        text-shadow: 0 0 20px #00eaff, 0 0 40px #00bcd4;
-        letter-spacing: 4px;
-    }
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px #00eaff, 0 0 40px #00bcd4;
+            letter-spacing: 4px;
+        }
 
-    p.subtext {
-        font-size: 1.2rem;
-        opacity: 0.85;
-        letter-spacing: 2px;
-        text-shadow: 0 0 10px #00eaff;
-        margin-bottom: 40px;
-    }
+        p.subtext {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00eaff;
+            margin-bottom: 40px;
+        }
 
-    .glow-box {
-        max-width: 750px;
-        padding: 25px;
-        border: 1px solid #00eaff;
-        border-radius: 10px;
-        box-shadow: 0 0 20px #00eaff55;
-        background: rgba(0, 40, 50, 0.25);
-        text-shadow: 0 0 8px #00eaff;
-    }
+        .glow-box {
+            max-width: 750px;
+            padding: 25px;
+            border: 1px solid #00eaff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00eaff55;
+            background: rgba(0, 40, 50, 0.25);
+            text-shadow: 0 0 8px #00eaff;
+        }
 
-    .glow-btn {
-        display: inline-block;
-        margin-top: 35px;
-        padding: 14px 32px;
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-        color: #00eaff;
-        text-decoration: none;
-        border: 2px solid #00eaff;
-        border-radius: 8px;
-        font-family: 'Orbitron', sans-serif;
-        box-shadow: 0 0 15px #00eaff88, 0 0 30px #00eaff55;
-        text-shadow: 0 0 10px #00eaff;
-        transition: 0.3s ease-in-out;
-    }
+        .glow-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 32px;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: #00eaff;
+            text-decoration: none;
+            border: 2px solid #00eaff;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 15px #00eaff88, 0 0 30px #00eaff55;
+            text-shadow: 0 0 10px #00eaff;
+            transition: 0.3s ease-in-out;
+        }
 
-    .glow-btn:hover {
-        color: #000;
-        background: #00eaff;
-        box-shadow: 0 0 25px #00eaff, 0 0 40px #00c3ff, 0 0 70px #00eaff;
-        transform: scale(1.08);
-    }
+        .glow-btn:hover {
+            color: #000;
+            background: #00eaff;
+            box-shadow: 0 0 25px #00eaff, 0 0 40px #00c3ff, 0 0 70px #00eaff;
+            transform: scale(1.08);
+        }
 
-    .back-link {
-        margin-top: 40px;
-    }
-
-</style>
+        .back-link {
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>SUPPORT</h1>
-<p class="subtext">Professional help from your local PC expert</p>
+    <h1>SUPPORT</h1>
+    <p class="subtext">Professional help from your local PC expert</p>
 
-<div class="glow-box">
-    <p>If you’re looking for dependable, professional IT support for your home or business, Cloud Cheshire delivers expert local services designed to keep your technology running smoothly, securely, and efficiently. From one‑off technical assistance to fully managed IT solutions, we provide practical support tailored to your needs.</p>
-    <p>Support services include:</p>
-    <ul style="list-style:none; padding:0; font-size:1.1rem; line-height:1.8;">
-        <li>• PC & Laptop Repairs and Upgrades</li>
-        <li>• Software Installation, Configuration & Troubleshooting</li>
-        <li>• Home & Business Network Infrastructure Setup</li>
-        <li>• Network & Wi‑Fi Design, Optimisation & Fault Finding</li>
-        <li>• Backup Solutions for Data Protection & Continuity</li>
-        <li>• Custom PC Builds & Hardware Upgrades</li>
-    </ul>
-    <p>For businesses, we also offer flexible monthly IT support packages — Bronze, Silver, and Gold — providing structured, proactive support to suit different operational requirements and budgets.
-    For direct support or to discuss the right solution for you, contact Cloud Cheshire using the button below:</p>
+    <div class="glow-box">
+        <p>
+            If you’re looking for dependable, professional IT support for your home or business,
+            Cloud Cheshire delivers expert local services designed to keep your technology running
+            smoothly, securely, and efficiently. From one-off technical assistance to fully managed
+            IT solutions, we provide practical support tailored to your needs.
+        </p>
 
-    <a href="mailto:jason@cloudcheshire.co.uk" class="glow-btn">EMAIL SUPPORT</a>
-</div>
+        <p>Support services include:</p>
 
-<div class="back-link">
-    <a href="/index.html" class="glow-btn">BACK</a>
-</div>
+        <ul style="list-style:none; padding:0; font-size:1.1rem; line-height:1.8;">
+            <li>• PC &amp; Laptop Repairs and Upgrades</li>
+            <li>• Software Installation, Configuration &amp; Troubleshooting</li>
+            <li>• Home &amp; Business Network Infrastructure Setup</li>
+            <li>• Network &amp; Wi‑Fi Design, Optimisation &amp; Fault Finding</li>
+            <li>• Backup Solutions for Data Protection &amp; Continuity</li>
+            <li>• Custom PC Builds &amp; Hardware Upgrades</li>
+        </ul>
+
+        <p>
+            For businesses, we also offer flexible monthly IT support packages — Bronze, Silver,
+            and Gold — providing structured, proactive support to suit different operational
+            requirements and budgets.
+            <br /><br />
+            For direct support or to discuss the right solution for you, contact Cloud Cheshire
+            using the options below:
+        </p>
+
+        <a href="mailto:jason@cloudcheshire.co.uk" class="glow-btn">
+            EMAIL SUPPORT
+        </a>
+
+        <br /><br />
+
+        <a href="tel:+4407798905131" class="glow-btn">
+            CALL US
+        </a>
+    </div>
+
+    <div class="back-link">
+        <a href="/index.html" class="glow-btn">
+            BACK
+        </a>
+    </div>
 
 </body>
 </html>
