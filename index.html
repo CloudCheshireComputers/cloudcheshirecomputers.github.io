@@ -226,6 +226,18 @@
       p.style.animationDuration = (8 + Math.random() * 8) + 's';
       document.body.appendChild(p);
     }
+    
+  </script>
+  
+  <!-- CURSOR SCRIPT -->
+  
+  <script>
+    const cursor = document.querySelector('.cursor-dot');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
   </script>
 
   <div class="container">
