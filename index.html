@@ -15,6 +15,25 @@
       text-align: center;
       overflow-x: hidden;
     }
+        /* ===== CUSTOM NEON CURSOR ===== */
+    body, a, button, .glow-btn {
+      cursor: none !important;
+    }
+
+    .cursor-dot {
+      width: 12px;
+      height: 12px;
+      background: #00eaff;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      box-shadow: 
+        0 0 10px #00eaff,
+        0 0 20px #00eaff,
+        0 0 35px #00eaff;
+    }
 
     /* ===== TOP SCROLLING BANNER ===== */
     .banner {
